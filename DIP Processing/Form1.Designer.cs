@@ -47,6 +47,7 @@
             loadBackground = new Button();
             openCamera = new Button();
             button1 = new Button();
+            saveImageWithBackgroundToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -64,7 +65,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fileToolStripMenuItem1, openToolStripMenuItem, saveToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fileToolStripMenuItem1, openToolStripMenuItem, saveToolStripMenuItem, saveImageWithBackgroundToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -72,20 +73,20 @@
             // fileToolStripMenuItem1
             // 
             fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            fileToolStripMenuItem1.Size = new Size(103, 22);
+            fileToolStripMenuItem1.Size = new Size(227, 22);
             fileToolStripMenuItem1.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new Size(103, 22);
+            openToolStripMenuItem.Size = new Size(227, 22);
             openToolStripMenuItem.Text = "Open";
             openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(103, 22);
+            saveToolStripMenuItem.Size = new Size(227, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -224,6 +225,13 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // saveImageWithBackgroundToolStripMenuItem
+            // 
+            saveImageWithBackgroundToolStripMenuItem.Name = "saveImageWithBackgroundToolStripMenuItem";
+            saveImageWithBackgroundToolStripMenuItem.Size = new Size(227, 22);
+            saveImageWithBackgroundToolStripMenuItem.Text = "Save Image with Background";
+            saveImageWithBackgroundToolStripMenuItem.Click += saveImageWithBackgroundToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -277,5 +285,6 @@
         private Button loadBackground;
         private Button openCamera;
         private Button button1;
+        private ToolStripMenuItem saveImageWithBackgroundToolStripMenuItem;
     }
 }
