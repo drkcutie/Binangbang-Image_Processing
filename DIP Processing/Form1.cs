@@ -54,7 +54,7 @@ namespace DIP_Processing
                     Console.WriteLine("Failed to read from the camera.");
                 }
             }
-            openCamera.Text = "Open Camera";
+            
         }
 
         public Form1()
@@ -474,6 +474,7 @@ namespace DIP_Processing
                     loaded = snapshot; // Store the processed snapshot
                     pictureBox1.Image = loaded;
                 }
+                openCamera.Text = "Open Camera";
             }
             else
             {
