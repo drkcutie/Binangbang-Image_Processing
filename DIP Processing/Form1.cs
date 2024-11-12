@@ -15,7 +15,7 @@ namespace DIP_Processing
         Mat frame;
         private Thread camera;
         bool isCameraRunning = false;
-        ConvMatrix ConvMatrix = new ConvMatrix();
+       
 
 
         private void CaptureCamera()
