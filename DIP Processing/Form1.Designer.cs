@@ -1,4 +1,4 @@
-﻿namespace DIP_Processing
+namespace DIP_Processing
 {
     partial class Form1
     {
@@ -33,6 +33,7 @@
             fileToolStripMenuItem1 = new ToolStripMenuItem();
             openToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
+            saveImageWithBackgroundToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             basicCopy = new Button();
@@ -47,7 +48,11 @@
             loadBackground = new Button();
             openCamera = new Button();
             button1 = new Button();
-            saveImageWithBackgroundToolStripMenuItem = new ToolStripMenuItem();
+            gaussianBlur = new Button();
+            smooth = new Button();
+            meanRemoval = new Button();
+            sharpen = new Button();
+            embossLaplascian = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -59,7 +64,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1114, 24);
+            menuStrip1.Size = new Size(1422, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -90,6 +95,13 @@
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
+            // saveImageWithBackgroundToolStripMenuItem
+            // 
+            saveImageWithBackgroundToolStripMenuItem.Name = "saveImageWithBackgroundToolStripMenuItem";
+            saveImageWithBackgroundToolStripMenuItem.Size = new Size(227, 22);
+            saveImageWithBackgroundToolStripMenuItem.Text = "Save Image with Background";
+            saveImageWithBackgroundToolStripMenuItem.Click += saveImageWithBackgroundToolStripMenuItem_Click;
+            // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(63, 127);
@@ -101,7 +113,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(644, 129);
+            pictureBox2.Location = new Point(871, 127);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(333, 295);
             pictureBox2.TabIndex = 2;
@@ -225,18 +237,66 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // saveImageWithBackgroundToolStripMenuItem
+            // gaussianBlur
             // 
-            saveImageWithBackgroundToolStripMenuItem.Name = "saveImageWithBackgroundToolStripMenuItem";
-            saveImageWithBackgroundToolStripMenuItem.Size = new Size(227, 22);
-            saveImageWithBackgroundToolStripMenuItem.Text = "Save Image with Background";
-            saveImageWithBackgroundToolStripMenuItem.Click += saveImageWithBackgroundToolStripMenuItem_Click;
+            gaussianBlur.Location = new Point(643, 129);
+            gaussianBlur.Name = "gaussianBlur";
+            gaussianBlur.Size = new Size(115, 37);
+            gaussianBlur.TabIndex = 15;
+            gaussianBlur.Text = "Gaussian Blur";
+            gaussianBlur.UseVisualStyleBackColor = true;
+            gaussianBlur.Click += gaussianBlur_Click;
+            // 
+            // smooth
+            // 
+            smooth.Location = new Point(643, 186);
+            smooth.Name = "smooth";
+            smooth.Size = new Size(115, 37);
+            smooth.TabIndex = 16;
+            smooth.Text = "Smooth";
+            smooth.UseVisualStyleBackColor = true;
+            smooth.Click += smooth_Click;
+            // 
+            // meanRemoval
+            // 
+            meanRemoval.Location = new Point(643, 241);
+            meanRemoval.Name = "meanRemoval";
+            meanRemoval.Size = new Size(115, 37);
+            meanRemoval.TabIndex = 17;
+            meanRemoval.Text = "Mean Removal";
+            meanRemoval.UseVisualStyleBackColor = true;
+            meanRemoval.Click += meanRemoval_Click;
+            // 
+            // sharpen
+            // 
+            sharpen.Location = new Point(643, 301);
+            sharpen.Name = "sharpen";
+            sharpen.Size = new Size(115, 37);
+            sharpen.TabIndex = 18;
+            sharpen.Text = "Sharpen";
+            sharpen.UseVisualStyleBackColor = true;
+            sharpen.Click += sharpen_Click;
+            // 
+            // embossLaplascian
+            // 
+            embossLaplascian.Location = new Point(643, 375);
+            embossLaplascian.Name = "embossLaplascian";
+            embossLaplascian.Size = new Size(115, 37);
+            embossLaplascian.TabIndex = 19;
+            embossLaplascian.Text = "Emboss Laplascian";
+            embossLaplascian.UseVisualStyleBackColor = true;
+            embossLaplascian.Click += embossLaplascian_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1114, 974);
+            ClientSize = new Size(1422, 974);
+            Controls.Add(embossLaplascian);
+            Controls.Add(sharpen);
+            Controls.Add(meanRemoval);
+            Controls.Add(smooth);
+            Controls.Add(gaussianBlur);
             Controls.Add(button1);
             Controls.Add(openCamera);
             Controls.Add(loadBackground);
@@ -286,5 +346,10 @@
         private Button openCamera;
         private Button button1;
         private ToolStripMenuItem saveImageWithBackgroundToolStripMenuItem;
+        private Button gaussianBlur;
+        private Button smooth;
+        private Button meanRemoval;
+        private Button sharpen;
+        private Button embossLaplascian;
     }
 }
