@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using ImageProcess2;
 using OpenCvSharp;
 using OpenCvSharp.Extensions; // Add this namespace at the top of your file
 
@@ -14,6 +15,7 @@ namespace DIP_Processing
         Mat frame;
         private Thread camera;
         bool isCameraRunning = false;
+        ConvMatrix ConvMatrix = new ConvMatrix();
 
 
         private void CaptureCamera()
@@ -506,6 +508,119 @@ namespace DIP_Processing
                         MessageBox.Show("Error saving file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void smooth_Click(object sender, EventArgs e)
+        {
+           
+           if(processed == null)
+           processed = (Bitmap)loaded.Clone();
+            try
+            {
+            if(BitmapFilter.Smooth(processed, 5))
+            {
+                pictureBox2.Image = processed;
+                
+
+            }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Smooth Operation Failed");
+
+            }
+
+        
+        }
+        private void gaussianBlur_Click(object sender, EventArgs e)
+        {
+
+           if(processed == null)
+           processed = (Bitmap)loaded.Clone();
+            try
+            {
+            if(BitmapFilter.GaussianBlur(processed, 5))
+            {
+                pictureBox2.Image = processed;
+            }
+ 
+            }catch(Exception exception)
+            {
+
+
+                MessageBox.Show("Gaussian Blur Operation Failed");
+
+            }
+
+        }
+
+        private void meanRemoval_Click(object sender, EventArgs e)
+        {
+
+           if(processed == null)
+           processed = (Bitmap)loaded.Clone();
+            try
+            {
+
+            if(BitmapFilter.MeanRemoval(processed, 5))
+            {
+                pictureBox2.Image = processed;
+            }
+    
+            }catch(Exception exception)
+            {
+
+                MessageBox.Show("Mean Removal Operation Failed");
+            }
+
+        }
+
+        private void sharpen_Click(object sender, EventArgs e)
+        {
+            if(processed == null)
+              processed = (Bitmap)loaded.Clone();
+            try
+            {
+            if(BitmapFilter.Sharpen(processed, 5))
+            {
+                pictureBox2.Image = processed;
+            }
+            else
+            {
+                MessageBox.Show("Sharpen Operation Failed");
+            }
+
+            }catch(Exception exception)
+            {
+
+
+                MessageBox.Show("Sharpen Operation Failed");
+            }
+            
+        }
+
+        private void embossLaplascian_Click(object sender, EventArgs e)
+        {
+            if(processed == null)
+              processed = (Bitmap)loaded.Clone();
+            try
+            {
+            if(BitmapFilter.EmbossLaplacian(processed))
+            {
+                pictureBox2.Image = processed;
+            }
+             else
+                {
+                MessageBox.Show("Emboss Laplascian Operation Failed");
+                }
+              
+
+            }catch(Exception exception)
+            {
+                MessageBox.Show("Emboss Laplascian Operation Failed");
             }
         }
     }
